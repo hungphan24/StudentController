@@ -3,10 +3,7 @@ package com.hungphan.demo.Controller;
 import com.hungphan.demo.Model.StudentModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +21,12 @@ public class StudentController {
         list.add(studentModel);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
+    @PostMapping("student2")
+    public ResponseEntity<?> student2(@RequestBody StudentModel studentModel) {
+        list.add(studentModel);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
 
 }
